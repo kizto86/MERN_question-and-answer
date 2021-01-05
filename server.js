@@ -2,7 +2,7 @@ require("dotenv").config();
 
 const appOptions = {
   MONGO_URI: process.env.DB_CONNECTION,
-  PORT: process.env.PRODUCTION_PORT,
+  PORT: process.env.PRODUCTION_PORT || 5000,
 };
 
 const App = require("./app")(appOptions);

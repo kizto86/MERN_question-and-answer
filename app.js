@@ -11,15 +11,15 @@ module.exports = (opts) => {
   app.use(morgan("dev"));
 
   const questionsRoute = require("./routes/question");
-  const registerUser = require("./routes/register");
-  const login = require("./routes/login");
+  //const registerUser = require("./routes/register");
+  //const login = require("./routes/login");
 
   //Middleware for handling request
   app.use("/questions", questionsRoute);
 
-  app.use("/register", registerUser);
+  //app.use("/register", registerUser);
 
-  app.use("/login", login);
+  //app.use("/login", login);
 
   //Error handler for page/route not found
 
