@@ -1,7 +1,9 @@
 const express = require("express");
 const morgan = require("morgan");
 const app = express();
+//interact with the mongodbase
 const mongoose = require("mongoose");
+//take and get data from the body(resquest)
 const bodyParser = require("body-parser");
 const cors = require("cors");
 
