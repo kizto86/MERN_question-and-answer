@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 import Nav from "./components/Nav";
 import CreateQuestionForm from "./components/CreateQuestionForm";
-//import Questions from "./components/Questions";
-//import CreateAnswerForm from "./components/CreateAnswerForm";
+import Questions from "./components/Questions";
+import CreateAnswerForm from "./components/CreateAnswerForm";
 
 class App extends React.Component {
   constructor(props) {
@@ -33,25 +33,25 @@ class App extends React.Component {
   }
 
   render() {
-    //const { questions } = this.state;
+    const { questions } = this.state;
     return (
       <Router>
         <div className="container">
           <Nav />
           <br />
-          {/*<Route
+          <Route
             path="/"
             exact
             render={() => <Questions questions={questions} />}
-          />*/}
+          />
           <Route
             path="/create-question"
             render={() => <CreateQuestionForm />}
           />
-          {/*<Route
+          <Route
             path="/create-answer-to/:questionId"
             component={CreateAnswerForm}
-          />*/}
+          />
         </div>
       </Router>
     );

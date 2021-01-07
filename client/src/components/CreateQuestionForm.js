@@ -26,9 +26,7 @@ export default class CreateQuestionForm extends Component {
       question_title: this.state.question_title,
       question_description: this.state.question_description,
     };
-    axios
-      .post("http://localhost:3002/questions", question)
-      .then((res) => console.log(res.data));
+    axios.post("/questions", question).then((res) => console.log(res.data));
     window.location = "/";
   };
 
