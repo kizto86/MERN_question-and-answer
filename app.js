@@ -5,6 +5,7 @@ const app = express();
 const mongoose = require("mongoose");
 //take and get data from the body(resquest)
 const bodyParser = require("body-parser");
+const path = require("path");
 const cors = require("cors");
 
 module.exports = (opts) => {
@@ -13,15 +14,9 @@ module.exports = (opts) => {
   app.use(morgan("dev"));
 
   const questionsRoute = require("./routes/question");
-  //const registerUser = require("./routes/register");
-  //const login = require("./routes/login");
 
   //Middleware for handling request
   app.use("/questions", questionsRoute);
-
-  //app.use("/register", registerUser);
-
-  //app.use("/login", login);
 
   //Error handler for page/route not found
 
@@ -57,6 +52,16 @@ module.exports = (opts) => {
     db.once("open", () => console.log("database connected"));
     return db;
   };
+
+  //Serve static asserts in production
+  if (process.env.NODE === "production") {
+    //Set static folder
+    app.use(express.static("client/build"));
+
+    app.get("*", (req, res) => {
+      res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+    });
+  }
 
   return {
     app,
