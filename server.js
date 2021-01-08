@@ -18,7 +18,7 @@ app.use("/questions", questionsRoute);
 
 //Error handler for page/route not found
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
   const error = new Error("Page Not found");
   error.status = 404;
   next(error);
@@ -32,7 +32,7 @@ app.use((error, req, res, next) => {
       message: error.message,
     },
   });
-});
+});*/
 
 //Setting up mongoose Connection
 
