@@ -22,7 +22,7 @@ router.get(
     const offset = req.query.offset | 0;
     const limit = req.query.limit | 0 || 20;
     const questions = await Question.find()
-      //.sort({ created_at: "desc" })
+      .sort({ created_at: "desc" })
       .skip(offset)
       .limit(limit);
     res.json(questions);

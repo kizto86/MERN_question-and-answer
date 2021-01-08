@@ -1,8 +1,9 @@
 import React from "react";
 import { Accordion, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
 import GetAnswers from "./GetAnswers";
+
+//Displaying the question properties(title,description) and answers
 
 const DisplayQuestions = (props) => {
   if (props.question) {

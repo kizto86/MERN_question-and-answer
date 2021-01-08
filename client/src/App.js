@@ -19,7 +19,7 @@ class App extends React.Component {
     this.getQuestions();
   }
 
-  //Fetch the questions
+  //Making an api call to the database to GET the questions
   getQuestions() {
     axios
       .get("http://localhost:3002/questions/")
