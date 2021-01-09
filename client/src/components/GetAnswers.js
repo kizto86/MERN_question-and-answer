@@ -9,12 +9,10 @@ class GetAnswers extends Component {
 
   componentDidMount() {
     const questionId = this.props.question;
-    console.log(questionId);
     axios
       .get(`/questions/${questionId}/answers`)
 
       .then((response) => {
-        console.log(response.data);
         this.setState({
           data: response.data,
         });

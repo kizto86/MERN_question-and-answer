@@ -22,7 +22,7 @@ class App extends React.Component {
   //Making an api call to the database to GET the questions
   getQuestions() {
     axios
-      .get("/questions/")
+      .get("http://localhost:3002/questions/")
       .then((response) => {
         this.setState({ questions: response.data });
       })
