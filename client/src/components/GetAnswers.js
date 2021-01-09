@@ -11,7 +11,7 @@ class GetAnswers extends Component {
     const questionId = this.props.question;
     console.log(questionId);
     axios
-      .get(`http://localhost:3002/questions/${questionId}/answers`)
+      .get(`/questions/${questionId}/answers`)
 
       .then((response) => {
         console.log(response.data);

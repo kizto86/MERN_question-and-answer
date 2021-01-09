@@ -12,7 +12,7 @@ const CreateAnswerForm = () => {
       content: content,
       question: questionId,
     };
-    axios.post(`http://localhost:3002/questions/${questionId}/answer`, answer);
+    axios.post(`/questions/${questionId}/answer`, answer);
     //.then((res) => console.log(res.data));
     window.location = "/";
     setContent("");
