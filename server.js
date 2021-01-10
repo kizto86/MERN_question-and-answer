@@ -16,27 +16,9 @@ const questionsRoute = require("./routes/question");
 //Middleware for handling request
 app.use("/questions", questionsRoute);
 
-//Error handler for page/route not found
-
-/*app.use((req, res, next) => {
-    const error = new Error("Page Not found");
-    error.status = 404;
-    next(error);
-  });
-
-  //Error handler for other types of error
-  app.use((error, req, res, next) => {
-    res.status(error.status || 500);
-    res.json({
-      error: {
-        message: error.message,
-      },
-    });
-  });*/
-
 //Setting up mongoose Connection
 
-mongoose.connect(process.env.DB_CONNECTION, {
+mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
