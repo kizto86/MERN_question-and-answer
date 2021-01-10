@@ -10,7 +10,7 @@ class GetAnswers extends Component {
   componentDidMount() {
     const questionId = this.props.question;
     axios
-      .get(`http://localhost:3002/questions/${questionId}/answers`)
+      .get(`http://localhost:5000/questions/${questionId}/answers`)
 
       .then((response) => {
         this.setState({
