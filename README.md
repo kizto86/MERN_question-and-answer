@@ -1,16 +1,18 @@
 # MERN questions and answers
 
-Questions and Answers app built with MERN stack along with react-bootstrap and axios
+Questions and Answers app developed with MERN stack along with react-bootstrap and axios
 
 ## Quick Start
 
 Set up an env file and add your MONGO_URI and port number the app will listen on.
 
 Install dependencies for server
-npm install
+
+### `npm install`
 
 Install dependencies for client
-npm run client-install
+
+### `npm run client-install`
 
 Start the client and server with concurrently
 
