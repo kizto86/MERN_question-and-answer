@@ -18,7 +18,7 @@ app.use("/questions", questionsRoute);
 
 //Setting up mongoose Connection
 
-mongoose.connect(process.env.MONGO_URI, {
+mongoose.connect(process.env.MONGODB_URI || process.env.DATABASE_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
