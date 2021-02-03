@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
+const { baseUrl } = require("./Config");
+
 const CreateAnswerForm = () => {
   const { questionId } = useParams();
   const [content, setContent] = useState("");
@@ -12,7 +14,7 @@ const CreateAnswerForm = () => {
       content: content,
       question: questionId,
     };
-    axios.post(`http://localhost:5000/questions/${questionId}/answer`, answer);
+    axios.post(`${baseUrl}/${questionId}/answer`, answer);
     //.then((res) => console.log(res.data));
     window.location = "/";
     setContent("");

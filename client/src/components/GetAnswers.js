@@ -4,13 +4,15 @@ import axios from "axios";
 
 import DisplayAnswers from "./DisplayAnswers";
 
+const { baseUrl } = require("./Config");
+
 class GetAnswers extends Component {
   state = { data: {} };
 
   componentDidMount() {
     const questionId = this.props.question;
     axios
-      .get(`http://localhost:5000/questions/${questionId}/answers`)
+      .get(`${baseUrl}/${questionId}/answers`)
 
       .then((response) => {
         this.setState({

@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+const { baseUrl } = require("./Config");
+
 export default class CreateQuestionForm extends Component {
   state = {
     username: "",
@@ -26,9 +28,8 @@ export default class CreateQuestionForm extends Component {
       question_title: this.state.question_title,
       question_description: this.state.question_description,
     };
-    axios.post("http://localhost:5000/questions", question);
-    //.then((res) => console.log(res.data));
-    window.location = "/";
+    axios.post(baseUrl, question); //.then((res) => console.log(res.data));
+    //window.location = "/";
   };
 
   render() {
