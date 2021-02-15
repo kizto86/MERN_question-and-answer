@@ -28,7 +28,7 @@ export default class CreateQuestionForm extends Component {
       question_title: this.state.question_title,
       question_description: this.state.question_description,
     };
-    axios.post(baseUrl, question); //.then((res) => console.log(res.data));
+    axios.post("https://obscure-inlet-42322.herokuapp.com/", question); //.then((res) => console.log(res.data));
     //window.location = "/";
   };
 

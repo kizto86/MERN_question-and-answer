@@ -4,15 +4,15 @@ import axios from "axios";
 
 import DisplayAnswers from "./DisplayAnswers";
 
-const { baseUrl } = require("./Config");
-
 class GetAnswers extends Component {
   state = { data: {} };
 
   componentDidMount() {
     const questionId = this.props.question;
     axios
-      .get(`${baseUrl}/${questionId}/answers`)
+      .get(
+        `https://obscure-inlet-42322.herokuapp.com/questions/${questionId}/answers`
+      )
 
       .then((response) => {
         this.setState({
