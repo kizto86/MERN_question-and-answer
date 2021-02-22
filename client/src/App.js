@@ -6,7 +6,6 @@ import Nav from "./components/Nav";
 import CreateQuestionForm from "./components/CreateQuestionForm";
 import Questions from "./components/Questions";
 import CreateAnswerForm from "./components/CreateAnswerForm";
-//const { baseUrl } = require("./components/Config");
 
 class App extends React.Component {
   constructor(props) {
@@ -16,7 +15,7 @@ class App extends React.Component {
     };
   }
 
-  // "http://localhost:5000/questions/"
+  //
   componentDidMount() {
     this.getQuestions();
   }
@@ -24,7 +23,7 @@ class App extends React.Component {
   //Making an api call to the database to GET the questions
   getQuestions() {
     axios
-      .get("https://obscure-inlet-42322.herokuapp.com/questions/")
+      .get("http://localhost:5000/questions")
       .then((response) => {
         this.setState({ questions: response.data });
       })

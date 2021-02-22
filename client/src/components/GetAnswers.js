@@ -10,10 +10,7 @@ class GetAnswers extends Component {
   componentDidMount() {
     const questionId = this.props.question;
     axios
-      .get(
-        `https://obscure-inlet-42322.herokuapp.com/questions/${questionId}/answers`
-      )
-
+      .get(`http://localhost:5000/questions/${questionId}/answers`)
       .then((response) => {
         this.setState({
           data: response.data,

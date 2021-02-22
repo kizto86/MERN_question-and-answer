@@ -12,11 +12,7 @@ const CreateAnswerForm = () => {
       content: content,
       question: questionId,
     };
-    axios.post(
-      `https://obscure-inlet-42322.herokuapp.com/${questionId}/answer`,
-      answer
-    );
-    //.then((res) => console.log(res.data));
+    axios.post(`http://localhost:5000/questions/${questionId}/answer`, answer);
     window.location = "/";
     setContent("");
   };
