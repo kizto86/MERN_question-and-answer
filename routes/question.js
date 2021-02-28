@@ -14,8 +14,9 @@ function asyncHandler(cb) {
     }
   };
 }
+// @route GET  /questions
+// @desc Get all questions
 
-//Send a GET request to /questions to read a list of questions
 router.get(
   "/",
   asyncHandler(async (req, res) => {
@@ -29,7 +30,9 @@ router.get(
   })
 );
 
-//Send a POST request to /questions to create a new question
+// @route POST  /questions
+// @desc Create a new question
+
 router.post(
   "/",
   asyncHandler(async (req, res) => {
@@ -55,7 +58,10 @@ router.post(
     }
   })
 );
-// Send a GET request to / questions/:id/answers to read answers to a particular question
+
+// @route GET   / questions/:id/answers
+// @desc Get an answer to a particular question
+
 router.get(
   "/:id/answers",
   asyncHandler(async (req, res) => {
@@ -80,7 +86,9 @@ router.get(
   })
 );
 
-//Send a POST request to /questions/:id/answer to create  a new answer for a particular question
+// @route POST   /questions/:id/answer
+// @desc  Create  an answer for a particular question
+
 router.post(
   "/:id/answer",
   asyncHandler(async (req, res) => {

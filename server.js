@@ -14,7 +14,7 @@ app.use(morgan("dev"));
 const questionsRoute = require("./routes/question");
 
 //Middleware for handling request
-app.use("/questions", questionsRoute);
+app.use("/api/questions", questionsRoute);
 
 //Setting up mongoose Connection
 
